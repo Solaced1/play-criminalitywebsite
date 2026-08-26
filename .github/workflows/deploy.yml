@@ -30,6 +30,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Prepare GitHub Pages
+        run: |
+          touch dist/.nojekyll
+          cp dist/index.html dist/404.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
